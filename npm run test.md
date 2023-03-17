@@ -23,7 +23,8 @@ karmaのjasmineページが表示されると思いますが、そこのエラ�
 Angular Materialが提供されている<strong>text-field</strong>パッケージに入っている。<br><br>
 実装背景：ユーザーが一つのテキストエリアに入力をしたことを例として挙げる。ユーザーの入力と伴い、入力した文字数もどんどん増えていくが、テキストエリアはそのまま固定高さとなっているのはほとんどである。入力している際に、テキストエリアの上の入力した文書を参照したい場合はスクロールバーを利用しなければならない。<br>このディレクティブを活用することで、テキストエリアが自動拡張できるようになる。<br><br>
 問題起因：CdkTextareaAutosizeをHTMLとtsファイルに実装したら、その時点でHTMLファイルのcompileは無事に実装され、動作も確認できると思う。しかし、問題点はnpm run testにうまくいかないこと。npm run testを打って、出てきたテストページではエラーが起きていることが確認できる。<br><br>
-問題思考：エラーがテスト段階で起きているので、テストファイルが不足している可能性が高い。<br><br>
+問題思考：エラーがテスト段階で起きているので、テストファイルが不足している可能性が高い。<br>
+specファイルはtsファイルをimportしているので、tsファイル側の宣言が足りないとspecファイルが怒られる。<br><br>
 問題解決：specファイルにおいて、.tsファイルでimportしたモジュールをimportしよう。
 <br><br>
 <p>.spec.ts</p>
@@ -50,7 +51,7 @@ export class クラス名 implements OnInit {<br>
 public cdkTextareaAutosize: CdkTextareaAutosize;
   <br>}
 </code>
-<br>
+<br><br>
 <hr>
 
 ### 問題解決途中のもろもろ
