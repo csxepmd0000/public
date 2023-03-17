@@ -6,7 +6,7 @@ karmaのjasmineページが表示されると思いますが、そこのエラ�
 
 ---
 
-## Error: Export of name ... Not Found!
+## Error: Export of name "CdkTextareaAutosize" Not Found!
 
 結論から言うと、手順は以下ようになる：
 1. .tsファイルのexport側に追加したものを宣言する
@@ -17,8 +17,8 @@ karmaのjasmineページが表示されると思いますが、そこのエラ�
 
 ---
 
-## Error: Export of name "CdkTextareaAutosize" Not Found!
 ### CdkTextareaAutosizeとは何
+
 テキストエリアをユーザーの入力を検知し、改行に伴いテキストエリアが自動的に調整してくれるディレクティブ。<a href="https://material.angular.io/cdk/text-field/overview">参考：material/text-field</a><br>
 Angular Materialが提供されている<strong>text-field</strong>パッケージに入っている。<br><br>
 実装背景：ユーザーが一つのテキストエリアに入力をしたことを例として挙げる。ユーザーの入力と伴い、入力した文字数もどんどん増えていくが、テキストエリアはそのまま固定高さとなっているのはほとんどである。入力している際に、テキストエリアの上の入力した文書を参照したい場合はスクロールバーを利用しなければならない。<br>このディレクティブを活用することで、テキストエリアが自動拡張できるようになる。<br><br>
