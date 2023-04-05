@@ -15,16 +15,11 @@ namespaceとclassはさておき、class内に、まずテスト主体となるx
 
 初期化：
 
-<code>
-private FileService _service;
+<code>private FileService _service;
 private readonlMock<IBlobRepository_blobRepository = new();
-
 private readonlMock<IFileRepository_fileRepository = new();
-
 [SetUp]
-
 public void Setup() =_service = new FileServi(_blobRepository.Object_fileRepository.Object);
-
 </code>
 
 実際のテストケース：
