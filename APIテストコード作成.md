@@ -24,19 +24,13 @@ public void Setup() =_service = new FileServi(_blobRepository.Object_fileReposit
 
 実際のテストケース：
 
-<code>
-
- [TestCase(TestName = "テストケース1")]
-
+<code>[TestCase(TestName = "テストケース1")]
 </code>
 
 テストメソッド：
 テストファイル自体生きているか確認（絶対通るケース）
 
-<code>
-
-public void TestTrue()
-
+<code>public void TestTrue()
 {
     Assert.Pass();
 }
@@ -45,40 +39,29 @@ public void TestTrue()
 単純テスト：
 とある変数の値が予想通りか
 
-<code>
-[TestCase(TestName = "TestString")]
-
+<code>[TestCase(TestName = "TestString")]
 public void TestString()
-
 {
     var actual = _service.テストしたいメソッド;
     Assert.That(actual, Is.EqualTo(予想結果));
 }
-
 </code>
 
 分岐テスト：
 とある処理には複数パータンがあって、すべての分岐を通して確認する必要性が出てくる。
 
-<code>
-[TestCase(TestName = "pattern1")]
-
+<code>[TestCase(TestName = "pattern1")]
 public void Pattern1()
-
 {
     var actual = _service.テストしたいメソッド(Pattern1の場合の引数);
     Assert.That(actual, Is.EqualTo(予想結果Pattern1));
 }
-
 [TestCase(TestName = "pattern2")]
-
 public void Pattern2()
-
 {
     var actual = _service.テストしたいメソッド(Pattern2の場合の引数);
     Assert.That(actual, Is.EqualTo(予想結果Pattern2));
 }
-
 </code>
 
 注意：TestCaseのTestName文字列には"."などファイル管理システムに戸惑わせる符号を使うと、テスト結果がうまく取得されない可能性がある。
