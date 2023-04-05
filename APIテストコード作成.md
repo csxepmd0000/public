@@ -17,7 +17,6 @@ namespaceとclassはさておき、class内に、まずテスト主体となるx
 
 <code>
 private FileService _service;
-
 private readonlMock<IBlobRepository_blobRepository = new();
 
 private readonlMock<IFileRepository_fileRepository = new();
